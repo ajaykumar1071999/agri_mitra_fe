@@ -1,0 +1,10 @@
+{
+  "hero": {
+    "title": "Manage Your Dairy Business Smarter",
+    "description": "Track customers, milk delivery and payments easily."
+  },
+  "navbar": {
+    "features": "Features",
+    "login": "Login"
+  }
+}
