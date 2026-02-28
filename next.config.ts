@@ -4,6 +4,7 @@ const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
 
 const nextConfig = {
   reactStrictMode: true,
+  productionBrowserSourceMaps: false,
 };
 
 export default withNextIntl(nextConfig);
