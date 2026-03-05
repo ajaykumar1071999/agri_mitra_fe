@@ -51,7 +51,6 @@ export default async function LocaleLayout(props: {
           <ThemeProvider>
             <Providers>
               <OfflineBanner />
-
               <Navbar />
               <main className="flex-1">{children}</main>
               <Footer />
