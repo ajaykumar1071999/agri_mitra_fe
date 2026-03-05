@@ -1,31 +1,38 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { useToast } from '@/hooks/useToast';
 
 export default function Hero() {
   const t = useTranslations('hero');
-  const toast = useToast();
 
   return (
     <section
-      className="px-6 py-24 text-center 
-bg-green-50 dark:bg-gray-900 transition-colors"
+      className="relative h-[90vh] flex items-center"
+      style={{
+        backgroundImage: "url('/farmer.jpg')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
     >
-      <h1
-        className="text-4xl md:text-5xl font-bold 
-text-red-700 dark:text-green-400"
-      >
-        {t('title')}
-      </h1>
-      <p className="text-black-300 dark:text-gray-300">{t('description')}</p>
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/40 dark:bg-black/60"></div>
 
-      <button
-        className="mt-8 px-6 py-3 bg-green-600 text-white rounded-lg"
-        onClick={() => toast.success('milkSaved')}
-      >
-        {t('cta')}
-      </button>
+      {/* Content */}
+      <div className="relative max-w-6xl mx-auto px-6 text-white">
+        <p className="mb-4 text-lg opacity-90">{t('tagline')}</p>
+
+        <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">{t('title')}</h1>
+
+        <p className="max-w-xl text-lg mb-8 opacity-90">{t('description')}</p>
+
+        <div className="flex gap-4 flex-wrap">
+          <button className="bg-green-600 hover:bg-green-700 px-6 py-3 rounded-lg">
+            {t('about')}
+          </button>
+
+          <button className="bg-white text-green-700 px-6 py-3 rounded-lg">{t('join')}</button>
+        </div>
+      </div>
     </section>
   );
 }

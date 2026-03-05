@@ -1,8 +1,32 @@
 {
   "hero": {
-    "title": "Manage Your Dairy Business Smarter",
-    "description": "Track customers, milk delivery and payments easily.",
-    "cta": "Get Started"
+    "cta": "Get Started",
+    "heroTitle": "Welcome to Ajay Dairy Farms",
+    "heroSubtitle": "Fresh Dairy Products & Sustainable Agriculture",
+    "explore": "Explore Our Farm",
+    "aboutTitle": "About Our Dairy Farm",
+    "aboutDesc": "We provide fresh milk and practice sustainable agriculture with modern farming technology.",
+    "servicesTitle": "Our Services",
+    "milk": "Fresh Milk Production",
+    "farming": "Organic Farming",
+    "products": "Dairy Products",
+    "subtitle": "Digital platform helping farmers with dairy and agriculture solutions",
+    "tagline": "Unlocking India's Real Farmer Potential",
+    "title": "Empowering Farmers with Smart Agri Solutions",
+    "description": "Access reliable agri support, expert guidance, and modern farming tools to grow faster and earn more.",
+    "about": "Know About Us",
+    "join": "Join Now"
+    
+  },
+  "services": {
+    "title": "Our Services",
+    "dairy": "Dairy Farming Support",
+    "schemes": "Government Schemes",
+    "advisory": "Crop Advisory"
+  },
+  "about": {
+    "title": "Empowering Farmers with Technology",
+    "desc": "We help farmers improve productivity using modern farming techniques and digital tools."
   },
   "navbar": {
     "features": "Features",
