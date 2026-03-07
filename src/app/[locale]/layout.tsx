@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 // import '../../globals.css';
 import '../globals.css';
+// import GoogleProvider from '@/providers/GoogleProvider';
 
 import OfflineBanner from '@/components/OfflineBanner';
 import Providers from '@/providers/Providers';
@@ -51,10 +52,12 @@ export default async function LocaleLayout(props: {
           <ThemeProvider>
             <Providers>
               <OfflineBanner />
+              {/* <GoogleProvider> */}
               <Navbar />
               <main className="flex-1">{children}</main>
               <Footer />
               <Toaster position="top-right" richColors closeButton theme="system" />
+              {/* </GoogleProvider> */}
             </Providers>
           </ThemeProvider>
         </NextIntlClientProvider>
