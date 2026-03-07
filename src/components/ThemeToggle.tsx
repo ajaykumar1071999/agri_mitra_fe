@@ -11,7 +11,6 @@ export default function ThemeToggle() {
     setMounted(true);
   }, []);
 
-  // Prevent hydration mismatch
   if (!mounted) return null;
 
   const isDark = resolvedTheme === 'dark';
@@ -19,13 +18,21 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={() => setTheme(isDark ? 'light' : 'dark')}
-      className="px-4 py-2 rounded-lg border 
-      border-gray-300 dark:border-gray-700 
-      bg-white dark:bg-gray-800 
-      text-gray-900 dark:text-gray-100 
-      transition-colors"
+      className="
+        flex items-center gap-2
+        px-3 py-2 lg:px-4
+        rounded-lg border
+        border-gray-300 dark:border-gray-700
+        bg-white dark:bg-gray-800
+        text-gray-900 dark:text-gray-100
+        transition-colors cursor-pointer
+      "
     >
-      {isDark ? '☀ Light' : '🌙 Dark'}
+      {/* Icon */}
+      <span className="text-lg">{isDark ? '☀️' : '🌙'}</span>
+
+      {/* Text only on desktop */}
+      <span className="hidden lg:inline">{isDark ? 'Light' : 'Dark'}</span>
     </button>
   );
 }
