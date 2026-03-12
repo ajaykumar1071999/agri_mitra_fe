@@ -30,7 +30,8 @@
   },
   "navbar": {
     "features": "Features",
-    "login": "Login"
+    "login": "Login",
+    "logout": "Logout"
   },
   "toast": {
     "milkSaved": "Milk entry saved successfully",
