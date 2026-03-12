@@ -9,7 +9,7 @@ import Providers from '@/providers/Providers';
 import ThemeProvider from '@/providers/ThemeProvider';
 
 import { NextIntlClientProvider } from 'next-intl';
-
+import Script from 'next/script';
 import { Toaster } from 'sonner';
 import Navbar from '@/components/marketing/Navbar';
 import Footer from '@/components/marketing/Footer';
@@ -37,7 +37,7 @@ export default async function LocaleLayout(props: {
   const { locale } = await params;
 
   const messages = (await import(`../../messages/${locale}.json`)).default;
-
+  const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
   return (
     <html lang={locale} suppressHydrationWarning>
       <body
@@ -48,16 +48,24 @@ export default async function LocaleLayout(props: {
   dark:bg-gray-950 dark:text-gray-100
   transition-colors duration-300`}
       >
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_ID}');
+          `}
+        </Script>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <ThemeProvider>
             <Providers>
               <OfflineBanner />
-              {/* <GoogleProvider> */}
-              <Navbar />
               <main className="flex-1">{children}</main>
-              <Footer />
               <Toaster position="top-right" richColors closeButton theme="system" />
-              {/* </GoogleProvider> */}
             </Providers>
           </ThemeProvider>
         </NextIntlClientProvider>
