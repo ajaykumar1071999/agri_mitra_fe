@@ -11,8 +11,8 @@ import ThemeProvider from '@/providers/ThemeProvider';
 import { NextIntlClientProvider } from 'next-intl';
 import Script from 'next/script';
 import { Toaster } from 'sonner';
-import Navbar from '@/components/marketing/Navbar';
-import Footer from '@/components/marketing/Footer';
+// import Navbar from '@/components/marketing/Navbar';
+// import Footer from '@/components/marketing/Footer';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -64,7 +64,9 @@ export default async function LocaleLayout(props: {
           <ThemeProvider>
             <Providers>
               <OfflineBanner />
-              <main className="flex-1">{children}</main>
+              <main className="flex-1" suppressHydrationWarning>
+                {children}
+              </main>
               <Toaster position="top-right" richColors closeButton theme="system" />
             </Providers>
           </ThemeProvider>
