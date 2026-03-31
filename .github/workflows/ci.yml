@@ -15,13 +15,13 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20   # ✅ FIXED
 
       - name: Install Dependencies
         run: npm ci
 
-      - name: Skip Tests (temporary)
-        run: echo "No tests yet"
+      - name: Skip Tests
+        run: echo "Skipping tests"
 
       - name: Build App
         run: npm run build
