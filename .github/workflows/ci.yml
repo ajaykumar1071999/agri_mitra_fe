@@ -1,7 +1,6 @@
 name: React CI Pipeline
 
 on:
-  # push:
   pull_request:
     branches: [main]
 
@@ -11,18 +10,18 @@ jobs:
 
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 18
 
       - name: Install Dependencies
-        run: npm install
+        run: npm ci
 
-      - name: Run Tests
-        run: echo "Skipping tests"
+      - name: Skip Tests (temporary)
+        run: echo "No tests yet"
 
       - name: Build App
         run: npm run build
