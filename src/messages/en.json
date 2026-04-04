@@ -16,7 +16,6 @@
     "description": "Access reliable agri support, expert guidance, and modern farming tools to grow faster and earn more.",
     "about": "Know About Us",
     "join": "Join Now"
-    
   },
   "services": {
     "title": "Our Services",
@@ -31,6 +30,7 @@
   "navbar": {
     "features": "Features",
     "login": "Login",
+    "register": "Register",
     "logout": "Logout"
   },
   "toast": {
