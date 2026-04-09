@@ -38,6 +38,12 @@ export default function Navbar() {
             >
               {t('login')}
             </Link>
+            <Link
+              href="/register"
+              className="px-4 py-2 rounded-lg bg-green-600 hover:bg-green-700 dark:bg-green-500 dark:hover:bg-green-600 text-white transition-colors"
+            >
+              {t('register')}
+            </Link>
 
             <LanguageSwitcher />
           </div>
